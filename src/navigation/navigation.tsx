@@ -4,12 +4,12 @@ import PartyScreen from '../screens/PartyScreen/PartyScreen';
 import HistoryScreen from '../screens/HistoryScreen/HistoryScreen';
 import useParty from '../hooks/usePartyConfig';
 
-type PartyStackParamsList = {
+export type PartyStackParamsList = {
 	Party: undefined;
 	History: undefined;
 };
 
-type HomeStackParamsList = {
+export type HomeStackParamsList = {
 	Home: undefined;
 };
 
@@ -24,7 +24,11 @@ export const PartyNavigation = () => {
 				component={PartyScreen}
 				options={{ headerShown: false }}
 			/>
-			<PartyStack.Screen name="History" component={HistoryScreen} />
+			<PartyStack.Screen
+				name="History"
+				component={HistoryScreen}
+				options={{ headerBackTitleVisible: false }}
+			/>
 		</PartyStack.Navigator>
 	);
 };
