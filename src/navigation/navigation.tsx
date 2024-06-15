@@ -2,7 +2,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import PartyScreen from '../screens/PartyScreen/PartyScreen';
 import HistoryScreen from '../screens/HistoryScreen/HistoryScreen';
-import useParty from '../hooks/usePartyConfig';
+import useParty from '../hooks/useGameMode';
 
 export type PartyStackParamsList = {
 	Party: undefined;

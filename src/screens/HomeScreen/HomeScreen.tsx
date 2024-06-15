@@ -3,10 +3,10 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { GAMES_CONFIG } from '../../constants';
 import styles from './HomeScreen.styles';
 import capitalize from '../../utils/capitalize';
-import usePartyConfig from '../../hooks/usePartyConfig';
+import useGameMode from '../../hooks/useGameMode';
 
 const HomeScreen = () => {
-	const [, setPartyConfig] = usePartyConfig();
+	const [, setGameMode] = useGameMode();
 
 	return (
 		<SafeAreaView style={styles.container}>
@@ -19,7 +19,7 @@ const HomeScreen = () => {
 					<Button
 						key={game.mode}
 						title={capitalize(game.mode)}
-						onPress={() => setPartyConfig({ mode: game.mode })}
+						onPress={() => setGameMode(game.mode)}
 					/>
 				))}
 			</View>

@@ -1,10 +1,10 @@
-import { Button, Pressable, Text, View } from 'react-native';
+import { Button, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Tile from './components/Tile';
 import { useState } from 'react';
-import { TGame, TPlayerEnum, TTileValueEnum } from '../../types';
+import { TPlayerEnum } from '../../types';
 import generateGameGrid from '../../utils/generateGameGrid';
-import usePartyConfig from '../../hooks/usePartyConfig';
+import useGameMode from '../../hooks/useGameMode';
 import styles from './PartyScreen.styles';
 import useHistory from '../../hooks/useHistory';
 import { NavigationProp, useNavigation } from '@react-navigation/native';
@@ -13,7 +13,7 @@ import { PartyStackParamsList } from '../../navigation/navigation';
 const PartyScreen = () => {
 	const navigation = useNavigation<NavigationProp<PartyStackParamsList>>();
 
-	const [partyConfig, setPartyConfig] = usePartyConfig();
+	const [partyMode, setPartyMode] = useGameMode();
 	const {
 		addToHistory,
 		resetHistory,
@@ -40,14 +40,22 @@ const PartyScreen = () => {
 
 	const handleQuit = () => {
 		handleReset();
-		setPartyConfig(null);
+		setPartyMode(null);
 	};
 
 	const handleOpenHistory = () => {
 		navigation.navigate('History');
 	};
 
-	const board = generateGameGrid(partyConfig?.mode);
+	if (!partyMode) {
+		return (
+			<SafeAreaView style={styles.container}>
+				<Text>Une erreur s'est produite avec la sélection du mode</Text>
+			</SafeAreaView>
+		);
+	}
+
+	const board = generateGameGrid(partyMode);
 
 	return (
 		<SafeAreaView style={styles.container}>
