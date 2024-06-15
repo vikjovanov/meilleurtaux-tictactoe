@@ -10,3 +10,5 @@ export enum TTileValueEnum {
 	X = 'X',
 	EMPTY = '.',
 }
+
+export type TGame = Array<Array<TTileValueEnum>>;
