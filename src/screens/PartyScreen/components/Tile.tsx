@@ -1,11 +1,4 @@
-import {
-	GestureResponderEvent,
-	Pressable,
-	PressableProps,
-	StyleSheet,
-	Text,
-	View,
-} from 'react-native';
+import { Pressable, PressableProps, StyleSheet, Text } from 'react-native';
 import { TTileValueEnum } from '../../../types';
 
 type Props = PressableProps & {
