@@ -25,6 +25,8 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import 'react-native-gesture-handler';
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
