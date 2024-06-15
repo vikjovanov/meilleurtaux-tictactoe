@@ -10,6 +10,9 @@ const HomeScreenStyles = StyleSheet.create({
 	},
 	title: { fontSize: 32, fontWeight: 'bold', textAlign: 'center' },
 	description: { fontSize: 16, textAlign: 'center' },
+	buttonsContainer: {
+		gap: 10,
+	},
 });
 
 export default HomeScreenStyles;

@@ -14,7 +14,7 @@ const HomeScreen = () => {
 			<Text style={styles.description}>
 				Cliquez sur un mode de jeu pour démarrer la partie
 			</Text>
-			<View>
+			<View style={styles.buttonsContainer}>
 				{GAMES_CONFIG.map(game => (
 					<Button
 						key={game.mode}
