@@ -4,3 +4,9 @@ export type TGameConfig = {
 	gridSize: number;
 	winningCondition: number;
 };
+
+export enum TTileValueEnum {
+	O = 'O',
+	X = 'X',
+	EMPTY = '.',
+}
